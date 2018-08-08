@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.6)
 
-project(heman)
+project(heman C)
 
 include_directories(include .)
 
@@ -35,5 +35,12 @@ set(MATH_SOURCE
     kazmath/vec2.c
     kazmath/vec3.c
     kazmath/vec4.c)
+
+add_executable(main
+${MATH_SOURCE}
+${HEMAN_SOURCE}
+main.c
+)
+
 
 add_library(heman STATIC ${HEMAN_SOURCE} ${MATH_SOURCE})
